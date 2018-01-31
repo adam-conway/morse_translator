@@ -32,4 +32,11 @@ class TranslatorTest < Minitest::Test
     translator = Translator.new
     assert_equal ".. .--- ..-. .- ..-....-...", translator.from_file("./lib/input.txt")
   end
+
+  def test_translate_morse_code_to_english
+    translator = Translator.new
+    assert_equal "he llo", translator.morse_to_eng(".... .  .-.. .-.. ---")
+    assert_equal "t3st1ng", translator.morse_to_eng("- ...-- ... - .---- -. --.")
+    assert_equal "sp   ace", translator.morse_to_eng("... .--.    .- -.-. .")
+  end
 end

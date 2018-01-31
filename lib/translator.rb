@@ -57,9 +57,21 @@ class Translator
       line = line.strip
       @string = line.to_s
     end
-    binding.pry
     eng_to_morse(@string)
   end
-end
 
-# binding.pry
+  def morse_to_eng(morse_code)
+    string_translation = ""
+    new_dictionary = dictionary.invert
+    characters = morse_code.split(/ /)
+    characters.each do |character|
+      if character == ""
+        string_translation += new_dictionary[" "]
+      else
+        string_translation += new_dictionary[character]
+      end
+    end
+    string_translation
+  end
+
+end
