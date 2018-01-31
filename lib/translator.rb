@@ -1,3 +1,5 @@
+require 'pry'
+
 class Translator
   attr_reader :dictionary
 
@@ -30,7 +32,6 @@ class Translator
                     "z" => "--..",
                     "1" => ".----",
                     "2" => "..---",
-                    "3" => "...--",
                     "4" => "....-",
                     "5" => ".....",
                     "6" => "-....",
@@ -40,4 +41,15 @@ class Translator
                     "0" => "-----",
                     " " => " "}
   end
+
+  def eng_to_morse(string)
+    morse_translation = ""
+    characters = string.split("")
+    characters.each do |character|
+      morse_translation += dictionary[character]
+    end
+    morse_translation
+  end
 end
+
+# binding.pry
