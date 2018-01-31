@@ -19,6 +19,12 @@ class TranslatorTest < Minitest::Test
   def test_eng_to_morse
     translator = Translator.new
     assert_equal "......-...--.", translator.eng_to_morse("help")
-    assert_equal "-....-.----", translator.eng_to_morse("test1")
+    assert_equal "-. ...-.----", translator.eng_to_morse("te st1")
+  end
+
+  def test_downcase
+    translator = Translator.new
+    assert_equal "......-...--.", translator.eng_to_morse("heLP")
+    assert_equal "-....-...--", translator.eng_to_morse("Test3")
   end
 end

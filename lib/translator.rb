@@ -33,6 +33,7 @@ class Translator
                     "1" => ".----",
                     "2" => "..---",
                     "4" => "....-",
+                    "3" => "...--",
                     "5" => ".....",
                     "6" => "-....",
                     "7" => "--...",
@@ -44,7 +45,7 @@ class Translator
 
   def eng_to_morse(string)
     morse_translation = ""
-    characters = string.split("")
+    characters = string.downcase.split("")
     characters.each do |character|
       morse_translation += dictionary[character]
     end
@@ -52,4 +53,4 @@ class Translator
   end
 end
 
-# binding.pry
+binding.pry
