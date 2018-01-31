@@ -51,6 +51,15 @@ class Translator
     end
     morse_translation
   end
+
+  def from_file(file_loation)
+    File.open(file_loation).each do |line|
+      line = line.strip
+      @string = line.to_s
+    end
+    binding.pry
+    eng_to_morse(@string)
+  end
 end
 
-binding.pry
+# binding.pry

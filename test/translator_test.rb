@@ -27,4 +27,9 @@ class TranslatorTest < Minitest::Test
     assert_equal "......-...--.", translator.eng_to_morse("heLP")
     assert_equal "-....-...--", translator.eng_to_morse("Test3")
   end
+
+  def test_running_translate_from_file
+    translator = Translator.new
+    assert_equal ".. .--- ..-. .- ..-....-...", translator.from_file("./lib/input.txt")
+  end
 end
