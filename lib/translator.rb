@@ -81,5 +81,3 @@ class Translator
   end
 
 end
-
-binding.pry
